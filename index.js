@@ -11,6 +11,7 @@ app.set('views', './views');
 app.set('view engine', 'ejs');
 
 var logRoot = Config.get('app.logRoot');
+var listenPort = Config.get('server.port');
 
 Stream.useAllAutoTags(true);
 Stream.streamBefore('pre-body-view');
@@ -43,7 +44,7 @@ app.get('/tail/:file', Stream.stream(), function (req, res) {
   tailFile(logFile, res);
 });
 
-var server = app.listen(3000, function () {
+var server = app.listen(listenPort, function () {
   var host = server.address().address;
   var port = server.address().port;
 

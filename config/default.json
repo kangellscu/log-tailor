@@ -1,4 +1,7 @@
 {
+  "server": {
+    "port": 9998
+  },
   "app": {
     "logRoot": "/data/go_projects_runtime/staging.api.sing.plus/storage/logs"
   }
